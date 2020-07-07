@@ -10,7 +10,9 @@
     "lint-staged": "lint-staged",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss,less}\"",
     "eslint": "eslint --ext .js,jsx src",
-    "stylelint": "stylelint \"src/**/*.{scss,less}\""
+    "stylelint": "stylelint \"src/**/*.{scss,less}\"",
+    "copy-to-production": "react-app-rewired build && scp -r ./build/* nodejs@165.22.45.50:/var/www/html/app.scrinshot.xyz",
+    "deploy": "git pull && npm install && pm2 restart app"
   },
   "husky": {
     "hooks": {
