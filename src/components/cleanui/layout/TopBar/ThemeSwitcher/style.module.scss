@@ -1,0 +1,37 @@
+@import 'components/mixins.scss';
+
+.themeSwitcher {
+  // box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1) !important;
+  display: block;
+  width: rem(40);
+  height: rem(40);
+  line-height: 40px;
+  text-align: center;
+  border-radius: 30px;
+  background: $white;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  color: $primary;
+
+  &:hover {
+    background: $primary;
+
+    i {
+      color: $white;
+    }
+  }
+
+  i {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    bottom: -2px;
+    color: $primary;
+  }
+}
+
+// dark theme
+[data-kit-theme='dark'] {
+  .themeSwitcher {
+    background: $dark-gray-4;
+  }
+}
