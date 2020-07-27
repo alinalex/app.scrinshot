@@ -6,9 +6,9 @@ import {
   SETTINGS_SET_THEME,
 } from '../actions/types'
 
-const STORED_SETTINGS = (storedSettings) => {
+const STORED_SETTINGS = storedSettings => {
   const settings = {}
-  Object.keys(storedSettings).forEach((key) => {
+  Object.keys(storedSettings).forEach(key => {
     const item = store.get(`app.settings.${key}`)
     settings[key] = typeof item !== 'undefined' ? item : storedSettings[key]
   })
@@ -27,7 +27,7 @@ const initialState = {
     isMenuCollapsed: false,
     menuLayoutType: 'left', // left, top, nomenu
     routerAnimation: 'slide-fadein-up', // none, slide-fadein-up, slide-fadein-right, fadein, zoom-fadein
-    menuColor: 'white', // white, dark, gray
+    menuColor: 'light', // light, dark, gray
     theme: 'default', // default, dark
     authPagesColor: 'white', // white, gray, image
     primaryColor: '#848BD8',
